@@ -1,0 +1,21 @@
+
+## Links ##
+
+Figma: https://www.figma.com/file/iQClybiHKi5pGOpScKzdaC/project-p3?node-id=0%3A1&t=jOtcCxwZoFmVvDj8-1
+Miro: https://miro.com/welcomeonboard/NnVHUHZ2ekt4ak1iS2RmQ0lmSG1ySG5LSGh6TDlzelpDZk96bk1xbWlFaWwyQ2Mzd0Q4MHUxemExUzJGbkt5b3wzNDU4NzY0NTM0NjMxNDAwNTYyfDI=?share_link_id=344960407001
+GitHub: https://github.com/Waayway/project-p3
+
+## Kleurpaletten ##
+
+Wit = #FFF
+Grijs = #D9D9D9
+Oranje = #FE8F00
+Blauw = #E4EFFC
+Grijs (2) = #8A8A8A
+
+
+## Takenverdeling ##
+
+- User Story Mapping: Salma, Esad & Thijs.
+- DevOps: Job, Thijs & Dylano.
+- Wireframes: Esad, Job & Thijs.

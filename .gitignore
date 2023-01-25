@@ -1,2 +1,8 @@
-node_modules/
-css/
+# Node Modules
+
+node_modules/*
+
+# Env Files
+
+css/*
+notities.txt/*
