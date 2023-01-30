@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass -w scss:css",
-    "sass:build": "sass scss:css --style=compressed"
+    "sass:build": "sass scss:css --style=compressed",
+    "build": "sh build.sh"
   },
   "repository": {
     "type": "git",
