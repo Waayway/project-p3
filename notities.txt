@@ -18,4 +18,4 @@ Grijs (2) = #8A8A8A
 
 - User Story Mapping: Salma, Esad & Thijs.
 - DevOps: Job, Thijs & Dylano.
-- Wireframes: Esad, Job & Thijs.
+- Wireframes: Esad, Job, Thijs & Salma.
