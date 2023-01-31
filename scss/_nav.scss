@@ -73,6 +73,7 @@ header {
       }
       > ul {
         background-color: config.get-color("phone-nav-bg");
+        color: util.should-text-be-dark(config.get-color("phone-nav-bg"));
         position: fixed;
         flex-direction: column;
         justify-content: flex-start;
