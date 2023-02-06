@@ -106,6 +106,7 @@ header {
             position: relative;
             top: auto;
             box-shadow: none;
+            z-index: 999;
             &::after {
               content: none;
             }
