@@ -39,4 +39,4 @@ Uitslag rood = #EC5454
 
 - User Story Mapping: Salma, Esad & Thijs.
 - DevOps: Job, Thijs & Dylano.
-- Wireframes: Esad, Job & Thijs.
+- Wireframes: Esad, Job, Thijs & Salma.
