@@ -7,12 +7,32 @@ GitHub: https://github.com/Waayway/project-p3
 
 ## Kleurpaletten ##
 
+# Home Pagina #
+
 Wit = #FFF
 Grijs = #D9D9D9
 Oranje = #FE8F00
 Blauw = #E4EFFC
-Grijs (2) = #8A8A8A
-Rood = #FE7163 (Kenmerken Pagina)
+Grijs (Mobiel Nav Menukleur) = #8A8A8A
+
+# Kenmerken Pagina
+Rood = #FE7163 
+Donker blauw = #91B3FA 
+Blauw = #BFD1FD
+Licht blauw = #E9F0FE
+
+# Medicatie Pagina #
+
+Paars = #7A3ADF
+Rood = #F66C6A
+
+# Quiz Pagina #
+
+Bruin = #E0D3C5
+Rood = #EF5253
+Licht Rood = #FF9595
+Uitslag groen = #62AF4F
+Uitslag rood = #EC5454
 
 
 ## Takenverdeling ##
