@@ -1,8 +1,12 @@
 @use "config/config.scss";
 @use "config/util.scss";
+
 header {
   nav {
     background-color: config.get-color("primary");
+    .hamburger {
+      display: none;
+    }
     ul {
       margin: 0;
       padding: 0;
@@ -19,14 +23,18 @@ header {
           font-size: 1.2rem;
         }
         > ul {
-          display: none;
+          display: flex;
           flex-direction: column;
           box-shadow: 0px 1px 3px 0px rgba($color: #000000, $alpha: 0.5);
           border-radius: 1rem;
           position: absolute;
           left: 0;
           top: 100%;
-          padding: .5rem;
+          padding: 0.5rem;
+          transform-origin: 50% 0;
+          transform: scaleY(0);
+          transition: transform 100ms ease-out;
+          background-color: white;
           &::after {
             content: "";
             left: 20%;
@@ -48,7 +56,74 @@ header {
         }
         &:hover {
           > ul {
-            display: flex;
+            transform: scaleY(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: config.get-screen-size("l")) {
+  header {
+    nav {
+      .hamburger {
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem;
+      }
+      > ul {
+        background-color: config.get-color("phone-nav-bg");
+        color: util.should-text-be-dark(config.get-color("phone-nav-bg"));
+        position: fixed;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: right;
+        width: 70%;
+        right: -70%;
+        height: 100%;
+        transition: right 300ms ease-in-out;
+        &.active {
+          right: 0;
+        }
+        li {
+          a {
+            padding-right: 3rem;
+            position: relative;
+            &::before {
+              content: "";
+              right: .5rem;
+              width: 2rem;
+              position: absolute;
+              height: 4px;
+              top: 50%;
+              border-radius: 1rem;
+              transform: translate(0, -50%);
+              background-color: #fff;
+            }
+          }
+          > ul {
+            transform: scaleY(1);
+            position: relative;
+            top: auto;
+            box-shadow: none;
+            z-index: 999;
+            &::after {
+              content: none;
+            }
+            li {
+              a {
+                padding-right: 4rem;
+                &::before {
+                  width: 3.5rem;
+                  right: 0;
+                  background-color: config.get-color("secondary");
+                }
+              }
+              a:hover {
+                background-color: transparent;
+              }
+            }
           }
         }
       }

@@ -1,0 +1,62 @@
+@use "../../config/config.scss";
+@use "../../config/util.scss";
+
+h1 {
+  color: #000;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.kenmerken-article {
+  display: flex;
+  background-color: #d9d9d9;
+  border-radius: 0.75rem;
+  position: relative;
+  @include util.width-per-screen-size();
+  margin: 0 auto;
+  padding: 1rem;
+  margin-top: 2rem;
+  .kenmerken-article_content {
+    width: 70%;
+  }
+  h3 {
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  p {
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+  button {
+    white-space: nowrap;
+    background-color: config.get-color("kenmerken-primary");
+    border: 0;
+    border-radius: 0.75rem;
+    color: #000;
+    cursor: pointer;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 550;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 100ms ease-out;
+    &:hover {
+      background-color: config.get-color("kenmerken-secondary");
+      color: #fff;
+    }
+  }
+  img {
+    position: absolute;
+    object-fit: contain;
+    width: 40%;
+    right: -4rem;
+    top: -4rem;
+  }
+}

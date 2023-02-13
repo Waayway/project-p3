@@ -1,5 +1,6 @@
 @use 'config.scss';
 @use 'sass:math';
+
 @function should-text-be-dark($color) {
   // Parse RGB by isolating each color
   $red: red($color);
