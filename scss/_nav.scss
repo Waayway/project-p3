@@ -34,6 +34,7 @@ header {
           transform-origin: 50% 0;
           transform: scaleY(0);
           transition: transform 100ms ease-out;
+          background-color: white;
           &::after {
             content: "";
             left: 20%;
@@ -106,6 +107,7 @@ header {
             position: relative;
             top: auto;
             box-shadow: none;
+            z-index: 999;
             &::after {
               content: none;
             }
