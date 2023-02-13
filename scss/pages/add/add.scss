@@ -1,0 +1,54 @@
+.container {
+    .algemeneinfo, .kenmerken {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        #ADDTitle {
+            width: fit-content;
+            height: fit-content;
+        }
+        p {
+            margin-top: 0;
+        }
+    }
+    .algemeneinfo {
+        width: 50%;
+    }
+    .ADD {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .oorzaken {
+            width: 40%;
+            h2 {
+            text-align: center;
+        }
+        p {
+            margin: 0.5rem;
+        }
+        }
+        img {
+            width: 40%;
+        }
+        .break { // Perhaps not needed anymore
+            flex-basis: 100%;
+            height: 0;
+        }
+    }
+    .kenmerken {
+        width: 100%;
+        .li-container {
+            display: flex;
+            flex-direction: row;
+
+            .li-left {
+            float: left;
+            }
+        .li-right {
+            float: right;
+            }
+        }
+    }
+}
