@@ -39,7 +39,7 @@ $screenSizes: (
 
 $containerWidths: (
   "s": 100%,
-  "l": 95%,
+  "m": 95%,
   "xl": 80%,
 );
 @function get-container-width($key: false) {

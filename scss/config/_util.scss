@@ -28,7 +28,8 @@
       }
       @if ($margin) {
         $margin: math.div(100% - $width, 2);
-        margin: 0 $margin;
+        margin-left: $margin;
+        margin-right: $margin;
       }
       @if ($padding) {
         $padding: math.div(100% - $width, 2);
