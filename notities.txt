@@ -15,7 +15,7 @@ Oranje = #FE8F00
 Blauw = #E4EFFC
 Grijs (Mobiel Nav Menukleur) = #8A8A8A
 
-# Kenmerken Pagina
+# Kenmerken Pagina #
 Rood = #FE7163 
 Donker blauw = #91B3FA 
 Blauw = #BFD1FD
