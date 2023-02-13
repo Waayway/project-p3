@@ -1,0 +1,38 @@
+@use "../../config/config.scss";
+@use "../../config/util.scss";
+
+main {
+    h2 {
+        text-align: center;
+    }
+    .container {
+        background-color: config.get-color("container-bg");
+        @include util.width-per-screen-size(true, true);
+        padding: 1rem;
+        border-radius: 1rem;
+        div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            &:nth-of-type(even) {
+                flex-direction: row-reverse;
+                .text {
+                    text-align: right;
+                }
+            }
+            .img {
+                height: 200px;
+                width: 200px;
+                border: 2px solid;
+            }
+            .text {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        hr {
+            color: #ABABAB;
+        }
+    }
+}
