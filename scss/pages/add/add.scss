@@ -26,11 +26,11 @@
     }
     .ADD {
         @include util.width-per-screen-size(true, true);
-        display: flex;
+        display: grid;
+        grid-template-columns: 50% 50%;
         justify-content: space-between;
         align-items: center;
         .oorzaken {
-            width: 40%;
             padding: 0.5rem;
             h2 {
                 text-align: center;
@@ -40,11 +40,11 @@
             }
         }
         .img-container {
-            width: 400px;
-            height: 400px;
+            display: flex;
+            justify-content: flex-end;
             img {
-                max-width: 100%;
-                max-height: 100%;
+                max-width: 400px;
+                max-height: 400px;
                 object-fit: cover;
             }
         }
