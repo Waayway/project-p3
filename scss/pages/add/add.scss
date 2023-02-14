@@ -1,0 +1,68 @@
+@use "../../config/config.scss";
+@use "../../config/util";
+
+.container {
+    .algemeneinfo,
+    .kenmerken {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        #ADDTitle {
+            width: fit-content;
+            height: fit-content;
+        }
+        p {
+            margin-top: 0;
+        }
+    }
+    .oorzaken,
+    .li-container {
+        background-color: config.get-color('container-bg');
+        border-radius: 0.75rem;
+    }
+    .algemeneinfo {
+        width: 50%;
+    }
+    .ADD {
+        @include util.width-per-screen-size(true, true);
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-content: space-between;
+        align-items: center;
+        .oorzaken {
+            padding: 0.5rem;
+            h2 {
+                text-align: center;
+            }
+            p {
+                margin: 0.5rem;
+            }
+        }
+        .img-container {
+            display: flex;
+            justify-content: flex-end;
+            img {
+                max-width: 400px;
+                max-height: 400px;
+                object-fit: cover;
+            }
+        }
+    }
+    hr {
+        @include util.width-per-screen-size();
+        width: 100%;
+        color: #D9D9D9;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .kenmerken {
+        width: 100%;
+        margin-bottom: 1rem;
+        .li-container {
+            display: flex;
+            flex-direction: row;
+            padding: 0.5rem;
+        }
+    }
+}
