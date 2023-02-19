@@ -11,7 +11,12 @@ $colors: (
   
   // # Kenmerken pagina
   "kenmerken-primary": #ff7063,
-  "kenmerken-secondary": #91b3fa
+  "kenmerken-secondary": #91b3fa,
+
+  // # Quiz Vragen pagina
+  "quiz-prev": #FF9595,
+  "quiz-next": #EF5253,
+  "quiz-ques-color": #E0D3C5,
 );
 
 @function get-color($color: false) {
