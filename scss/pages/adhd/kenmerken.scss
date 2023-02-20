@@ -1,7 +1,16 @@
 @use "../../config/config.scss";
 @use "../../config/util.scss";
 
+.container {
+  @media screen and (max-width: config.get-screen-size("l")) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1 {
+  @media screen and (max-width: config.get-screen-size("l")) {
+  }
   color: #000;
   font-size: 2.5rem;
   font-weight: 700;
@@ -20,6 +29,9 @@ h1 {
   margin: 0 auto;
   padding: 1rem;
   margin-top: 2rem;
+  @media screen and (max-width: config.get-screen-size("l")) {
+    flex-direction: column-reverse;
+  }
   .kenmerken-article_content {
     width: 70%;
   }
@@ -58,5 +70,11 @@ h1 {
     width: 40%;
     right: -4rem;
     top: -4rem;
+    @media screen and (max-width: config.get-screen-size("l")) {
+      width: 70%;
+      position: relative;
+    }
   }
+}
+
 }
