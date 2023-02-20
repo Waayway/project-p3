@@ -18,17 +18,32 @@ main {
                 flex-direction: row-reverse;
                 .text {
                     text-align: right;
+                    a {
+                        align-self: flex-end;
+                    }
                 }
             }
             .img {
-                height: 200px;
-                width: 200px;
+                width: 13.5rem;
+                aspect-ratio: 1 / 1;
                 border: 2px solid;
             }
             .text {
                 width: 50%;
-                display: flex;
                 flex-direction: column;
+                justify-content: flex-start;
+                a {
+                    background-color: config.get-color("secondary");
+                    width: fit-content;
+                    padding: .5rem 1rem;
+                    border-radius: 1rem;
+                    text-decoration: none;
+                    color: util.should-text-be-dark(config.get-color("secondary"));
+                    transition: all 150ms ease-out;
+                    &:hover {
+                        background-color: config.get-color("kenmerken-secondary");
+                    }
+                }
             }
         }
         hr {
