@@ -1,234 +1,88 @@
 @use "../config/util.scss";
 @use "../config/config.scss";
 
-* {
-    box-sizing: border-box;
-}
+.container {
+    margin-left: 10rem;
+    margin-top: 4rem;
 
-section {
-    @include util.width-per-screen-size(true, true);
-    margin-top: 5rem;
-    display: flex;
-
-    .main-container {
-        z-index: 0;
-        display: flex;
-        flex-direction: column;
-        padding: 0 30px 30px;
-        overflow: auto;
-        background-size: 80%;
-        background-position-x: 150px;
-        background-color: #b0b6b8;
-        display: flex;
-        flex-direction: column;
-        width: 55%;
-        padding: 30px;
-        border-radius: 20px;
-        align-self: stretch;
-        overflow: hidden;
-        position: relative;
-        transition: background 0.3s;
-        background-repeat: no-repeat;
-    }
-
-    .main1 {
-        display: flex;
-        align-items: center;
-    }
-
-    .main-title {
-        font-size: 25px;
-        max-width: 12ch;
-        font-weight: 600;
-        letter-spacing: 1px;
-        color: #fff;
-        margin-bottom: 30px;
-    }
-
-    .main1+.main1 {
-        margin-left: 20px;
-        width: 35%;
-        background-color: unset;
-        background-position-x: 0;
-        background-size: 139%;
-        filter: saturate(1.4);
-    }
-
-    .main1+.main1 {
-        border-color: rgba(255, 255, 255, 0.75);
-        margin-top: 14px;
-    }
-
-    .main1+.main1 {
-        border-color: #ffe6b2;
-        color: #e7bb7d;
-    }
-
-    .main1+.main1 .info {
-        margin-left: 0;
-    }
-
-    @media screen and (max-width: 905px) {
-
-        .main1,
-        .main1+.main1 {
-            width: 50%;
-            padding: 30px;
-        }
-
-        .button {
-            margin-top: 20px;
-
-        }
-
-        .main1 {
-            background-size: cover;
-            background-position-x: center;
-            background-blend-mode: overlay;
-        }
-    }
-
-    margin-top: 5rem;
-    display: flex;
-
-    .main-container2 {
-        display: flex;
-        flex-direction: column;
-        padding: 0 30px 30px;
-        overflow: auto;
-        background-size: 80%;
-        background-position-x: 150px;
-        background-color: #b0b6b8;
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        padding: 30px;
-        border-radius: 20px;
-        align-self: stretch;
-        overflow: hidden;
-        position: relative;
-        transition: background 0.3s;
-        background-repeat: no-repeat;
-    }
-
-    .main1 {
-        display: flex;
-        align-items: center;
-    }
-
-    .main-title {
-        font-size: 25px;
-        max-width: 12ch;
-        font-weight: 600;
-        letter-spacing: 1px;
-        color: #fff;
-        margin-bottom: 30px;
-    }
-
-    .main1+.main1 {
-        margin-left: 20px;
-        width: 35%;
-        background-color: unset;
-        background-position-x: 0;
-        background-size: 139%;
-        filter: saturate(1.4);
-    }
-
-    .main1+.main1 {
-        border-color: rgba(255, 255, 255, 0.75);
-        margin-top: 14px;
-    }
-
-    .main1+.main1 {
-        border-color: #ffe6b2;
-        color: #e7bb7d;
-    }
-
-    .main1+.main1 .info {
-        margin-left: 0;
-    }
-
-    @media screen and (max-width: 905px) {
-
-        .main1,
-        .main1+.main1 {
-            width: 50%;
-            padding: 30px;
-        }
-
-        .main1 {
-            background-size: cover;
-            background-position-x: center;
-            background-blend-mode: overlay;
-        }
-    }
-
-    .btn {
-        border: none;
+    h1 {
         color: #000;
-        position: relative;
-        width: 130px;
-        height: 40px;
-        border-radius: 18px;
-        padding: 10px 25px;
-        font-family: 'Lato', sans-serif;
-        font-weight: 500;
-        background: config.get-color("primary");
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        display: inline-block;
-        align-self: flex-end;
-        outline: none;
-        white-space: nowrap;
-
-        &::after {
-            position: absolute;
-            content: "";
-            width: 0;
-            height: 100%;
-            top: 0;
-            left: 0;
-            direction: rtl;
-            z-index: -1;
-
-            transition: all 0.3s ease;
+        font-size: 2rem;
+        width: 30%;
+    }
+    section {
+        border-radius: 0.75rem;
+        padding: 1rem;
+        display: flex;
+        background-color: #D9D9D9;
+        h3 {
+            margin-top: -0rem;
         }
-
-        &:hover {
+    }
+    .top-container {
+        max-width: 55%;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        .top-info {
+            max-width: 75%;
+            margin-bottom: 2rem;
+        }
+        .button1 {
+            max-width: 12rem;
+            white-space: nowrap;
+            background-color: #CCE9FB;
+            border: 0;
+            border-radius: 0.75rem;
             color: #000;
-            background-color: config.get-color("secondary");
+            cursor: pointer;
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: .8rem .3rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            margin-bottom: 1rem;
+            &:hover {
+              background-color: config.get-color("secondary");
+              color: #fff;
+            }
         }
-
-        &:hover:after {
-            left: auto;
-            right: 0;
-            width: 100%;
-        }
-
-        &:active {
-            top: 2px;
-        }
-
-    &.btn2{
-        align-self: flex-end;
     }
+    .bottom-container {
+        max-width: 90%;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        .bottom-info {
+            max-width: 90%;
+        }
+        .button2 {
+            max-width: 12rem;
+            margin-left: 85rem;
+            white-space: nowrap;
+            background-color: #CCE9FB;
+            border: 0;
+            border-radius: 0.75rem;
+            color: #000;
+            cursor: pointer;
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: .8rem 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            margin-top: .5rem;
+            &:hover {
+              background-color: config.get-color("secondary");
+              color: #fff;
+            }
+        }
+    }
+    .img {
+       position: absolute;
+       top: 24%;
+       right: 22%;
 
     }
-}
-
-.img1{
-    
-    width: 400px;
-    height: 300px;
-    margin-left: -5rem;
-    align-items: center;
-    border-radius: 50%;
-    justify-content: center;
-    background-repeat: no-repeat;
-    background-position: 96%;
-  object-fit: cover;
-  border-radius: 50%;
-  z-index: 100;
-  
 }
