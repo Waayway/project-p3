@@ -1,7 +1,7 @@
 @use "../../config/config.scss";
 @use "../../config/util";
 
-body {
+main {
     #title {
         text-align: center;
     }
@@ -13,6 +13,10 @@ body {
         display: grid;
         position: relative;
         padding-bottom: 2rem;
+        .intro-text {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
         .img-container {
             display: flex;
             justify-content: space-around;
