@@ -27,13 +27,4 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-$quiz = "";
-
-foreach ($result as $q) {
-    $quiz .= "<div class='quiz'>
-                <h2 class='quiz__title'>$q->vragen</h2>
-                <p class='quiz__answer'>$q->antwoorden</p>
-                <p class='quiz__result'>$q->uitslag</p>
-            </div>";
-}
 ?>
