@@ -11,7 +11,10 @@ $colors: (
   
   // # Kenmerken pagina
   "kenmerken-primary": #ff7063,
-  "kenmerken-secondary": #91b3fa
+  "kenmerken-secondary": #91b3fa,
+
+  // # Medicatie pagina
+  "medicatie-popup": #acacac,
 );
 
 @function get-color($color: false) {
