@@ -1,0 +1,71 @@
+@use "../../config/config.scss";
+@use "../../config/util";
+
+body {
+    #title {
+        text-align: center;
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        background-color: config.get-color('container-bg');
+        @include util.width-per-screen-size(true, true);
+        display: grid;
+        position: relative;
+        padding-bottom: 2rem;
+        .img-container {
+            display: flex;
+            justify-content: space-around;
+            z-index: 2;
+            .medicatie {
+                .img {
+                    position: relative;
+                    width: fit-content;
+                    cursor: pointer;
+                    .overlay {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 50%;
+                        text-align: center;
+                        color: config.get-color('primary');
+                        font-weight: bold;
+                    }
+                }
+                .text-container {
+                    display: none;
+                }
+                &.hidden {
+                    opacity: 0;
+                }
+                &.selected {
+                    display: flex;
+                    align-items: center;
+                    order: 2;
+                    .text-container {
+                        margin-left: -5px;
+                        display: block;
+                        background-color: config.get-color('medicatie-popup');
+                        position: relative;
+                        padding: 1rem;
+                        border-top-right-radius: 1rem;
+                        border-bottom-right-radius: 1rem;
+                        img {
+                            position: absolute;
+                            top: 0.5rem;
+                            right: 0.5rem;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+        #pills {
+            width: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+    }
+}
