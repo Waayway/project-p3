@@ -5,7 +5,175 @@
     margin-left: 10rem;
     margin-top: 4rem;
 
+<<<<<<< HEAD
     h1 {
+=======
+h1 {
+    width: 40%;
+    margin: 0 0 0 4.5em;
+}
+
+section {
+    @include util.width-per-screen-size(true, true);
+    margin-top: 5rem;
+    display: flex;
+
+    .main-container {
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 0 30px 30px;
+        overflow: auto;
+        background-size: 80%;
+        background-position-x: 150px;
+        background-color: #b0b6b8;
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+        padding: 30px;
+        border-radius: 20px;
+        align-self: stretch;
+        overflow: hidden;
+        position: relative;
+        transition: background 0.3s;
+        background-repeat: no-repeat;
+    }
+
+    .main1 {
+        display: flex;
+        align-items: center;
+    }
+
+    .main-title {
+        font-size: 25px;
+        max-width: 12ch;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+
+    .main1+.main1 {
+        margin-left: 20px;
+        width: 35%;
+        background-color: unset;
+        background-position-x: 0;
+        background-size: 139%;
+        filter: saturate(1.4);
+    }
+
+    .main1+.main1 {
+        border-color: rgba(255, 255, 255, 0.75);
+        margin-top: 14px;
+    }
+
+    .main1+.main1 {
+        border-color: #ffe6b2;
+        color: #e7bb7d;
+    }
+
+    .main1+.main1 .info {
+        margin-left: 0;
+    }
+
+    @media screen and (max-width: 905px) {
+
+        .main1,
+        .main1+.main1 {
+            width: 50%;
+            padding: 30px;
+        }
+
+        .button {
+            margin-top: 20px;
+
+        }
+
+        .main1 {
+            background-size: cover;
+            background-position-x: center;
+            background-blend-mode: overlay;
+        }
+    }
+
+    margin-top: 5rem;
+    display: flex;
+
+    .main-container2 {
+        display: flex;
+        flex-direction: column;
+        padding: 0 30px 30px;
+        overflow: auto;
+        background-size: 80%;
+        background-position-x: 150px;
+        background-color: #b0b6b8;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        padding: 30px;
+        border-radius: 20px;
+        align-self: stretch;
+        overflow: hidden;
+        position: relative;
+        transition: background 0.3s;
+        background-repeat: no-repeat;
+    }
+
+    .main1 {
+        display: flex;
+        align-items: center;
+    }
+
+    .main-title {
+        font-size: 25px;
+        max-width: 12ch;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+
+    .main1+.main1 {
+        margin-left: 20px;
+        width: 35%;
+        background-color: unset;
+        background-position-x: 0;
+        background-size: 139%;
+        filter: saturate(1.4);
+    }
+
+    .main1+.main1 {
+        border-color: rgba(255, 255, 255, 0.75);
+        margin-top: 14px;
+    }
+
+    .main1+.main1 {
+        border-color: #ffe6b2;
+        color: #e7bb7d;
+    }
+
+    .main1+.main1 .info {
+        margin-left: 0;
+    }
+
+    @media screen and (max-width: 905px) {
+
+        .main1,
+        .main1+.main1 {
+            width: 50%;
+            padding: 30px;
+        }
+
+        .main1 {
+            background-size: cover;
+            background-position-x: center;
+            background-blend-mode: overlay;
+        }
+    }
+
+    .btn {
+        border: none;
+>>>>>>> bf07d791b2c23d9bc3fdb4e19413f83e1b34fc65
         color: #000;
         font-size: 2rem;
         width: 30%;

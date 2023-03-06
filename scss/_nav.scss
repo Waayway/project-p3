@@ -35,6 +35,7 @@ header {
           transform: scaleY(0);
           transition: transform 100ms ease-out;
           background-color: white;
+          z-index: 100;
           &::after {
             content: "";
             left: 20%;
@@ -83,6 +84,7 @@ header {
         right: -70%;
         height: 100%;
         transition: right 300ms ease-in-out;
+        z-index: 999;
         &.active {
           right: 0;
         }

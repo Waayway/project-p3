@@ -4,8 +4,8 @@
 
 - Esad
 - Thijs
-- Matthijs
-- Job
+- Jobhijs
+- Matt
 - Salma
 - Dylano
 
