@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+h1 {
+    width: 40%;
+    margin: 0 0 0 4.5em;
+}
+
 section {
     @include util.width-per-screen-size(true, true);
     margin-top: 5rem;
