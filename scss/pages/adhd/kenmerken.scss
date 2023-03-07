@@ -49,7 +49,12 @@ h1 {
     font-size: 1.1rem;
     font-weight: 400;
   }
-  button {
+  u {
+    color: #fc5044;
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+  a {
     white-space: nowrap;
     background-color: config.get-color("kenmerken-primary");
     border: 0;
@@ -59,10 +64,13 @@ h1 {
     display: block;
     font-size: 1.2rem;
     font-weight: 550;
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 0.3rem;
+    width: 15rem;
     text-align: center;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     &:hover {
       background-color: config.get-color("kenmerken-secondary");
       color: #fff;
@@ -71,7 +79,7 @@ h1 {
   img {
     position: absolute;
     object-fit: contain;
-    width: 40%;
+    width: 33%;
     right: -4rem;
     top: -4rem;
     @media screen and (max-width: config.get-screen-size("l")) {
