@@ -24,6 +24,11 @@ main {
                 }
             }
             .img {
+                .img1 {
+                    margin-left: -15rem;
+                    margin-top: -3rem;
+                    width: 55rem;
+                }
                 // max-height: 20rem;
                 max-width: 40%;
                 img {
@@ -33,20 +38,26 @@ main {
                 }
             }
             .text {
-                width: 50%;
+                width: 70%;
                 flex-direction: column;
                 justify-content: flex-start;
+                margin-bottom: 5rem;
                 a {
-                    background-color: config.get-color("secondary");
+                    background-color: config.get-color("kenmerken-secondary");
+                    margin-left: -6.1rem;
                     width: fit-content;
                     padding: .5rem 1rem;
                     border-radius: 1rem;
                     text-decoration: none;
-                    color: util.should-text-be-dark(config.get-color("secondary"));
+                    color: util.should-text-be-dark(config.get-color("kenmerken-secondary"));
                     transition: all 150ms ease-out;
                     &:hover {
-                        background-color: config.get-color("kenmerken-secondary");
+                        background-color: #fbebdb;
                     }
+                }
+                #text1 {
+                    width: 90%;
+                    margin-left: -6rem;
                 }
             }
         }
