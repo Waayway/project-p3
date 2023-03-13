@@ -20,6 +20,9 @@ $colors: (
   "quiz-unfilled": #FF9595,
   "quiz-filled": #EF5253,
   "quiz-ques-color": #E0D3C5,
+  "quiz-submit-color": #115f99,
+
+  "quiz-uitslagen": #8A8A8A
 );
 
 @function get-color($color: false) {

@@ -14,16 +14,8 @@ const limitQuestions = (curQues) => {
 
 const render = () => {
     if (currentActiveQuestion == currentQuestion) return;
-    questions[currentActiveQuestion].animate([{ opacity: 1 }, { opacity: 0 }], {
-        duration: 300,
-        iterations: 1,
-        fill: "forwards",
-    });
-    questions[currentQuestion].animate([{ opacity: 0 }, { opacity: 1 }], {
-        duration: 300,
-        iterations: 1,
-        fill: "forwards",
-    });
+    questions[currentActiveQuestion].classList.remove("active");
+    questions[currentQuestion].classList.add("active");
     currentActiveQuestion = currentQuestion;
     if (currentQuestion == 0) {
         prevButton.classList.add("unfilled");
@@ -64,3 +56,13 @@ const resizeQuestions = () => {
 resizeQuestions();
 
 window.onresize = resizeQuestions;
+
+let answerBtn = document.querySelectorAll(".answer-btn");
+
+answerBtn.forEach((el) => {
+    let input = el.querySelector("input");
+    el.addEventListener("click", () => {
+        console.log(input.checked);
+        input.checked = !input.checked;
+    });
+});

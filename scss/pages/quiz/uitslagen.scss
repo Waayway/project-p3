@@ -1,0 +1,62 @@
+@use "../../config/config.scss";
+@use "../../config/util.scss";
+
+main {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+                        "img     uitslag"
+                        "content content"
+                        "again   tohome";
+        background-color: config.get-color("quiz-uitslagen");
+        margin-top: 4rem;
+        border-radius: 1rem;
+        @include util.width-per-screen-size(true, true);
+        .img {
+            grid-area: img;  
+            margin-top: -2rem;
+            margin-left: -2rem;
+        }
+        .uitslag {
+            grid-area: uitslag;
+            width: 60%;
+            justify-self: center;
+            align-self: center;
+            border-radius: 1rem;
+            text-align: center;
+            height: fit-content;
+            padding: 1rem;
+            font-weight: bold;
+            &.positive {
+                background-color: #62AF4F;
+            }
+            &.negative {
+                background-color: #EC5454;
+            }
+        }
+        .content {
+            grid-area: content;
+            margin: 1rem 10rem;
+        }
+        .button {
+            background-color: #E4EFFC;
+            width: fit-content;
+            padding: 0.5rem 1rem;
+            display: flex;
+            white-space: nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            border-radius: 1rem;
+        }
+        .again {
+            grid-area: again;
+            left: 0;
+        }
+        .home {
+            grid-area: tohome;
+            right: 0;
+        }
+    }
+}
