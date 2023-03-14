@@ -18,7 +18,7 @@
     }
     .oorzaken,
     .li-container {
-        background-color: config.get-color('container-bg');
+        background-color: config.get-color("container-bg");
         border-radius: 0.75rem;
     }
     .algemeneinfo {
@@ -26,10 +26,12 @@
     }
     .ADD {
         @include util.width-per-screen-size(true, true);
-        display: grid;
-        grid-template-columns: 50% 50%;
-        justify-content: space-between;
-        align-items: center;
+        @media screen and (min-width: config.get-screen-size("l")) {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            justify-content: space-between;
+            align-items: center;
+        }
         .oorzaken {
             padding: 0.5rem;
             h2 {
@@ -42,6 +44,10 @@
         .img-container {
             display: flex;
             justify-content: flex-end;
+            @media screen and (max-width: config.get-screen-size("l")) {
+                justify-content: center;
+                margin-top: 1rem;
+            }
             img {
                 max-width: 400px;
                 max-height: 400px;
@@ -52,7 +58,7 @@
     hr {
         @include util.width-per-screen-size();
         width: 100%;
-        color: #D9D9D9;
+        color: #d9d9d9;
         margin-top: 1.5rem;
         margin-bottom: 0.5rem;
     }
