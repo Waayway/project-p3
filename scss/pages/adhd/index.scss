@@ -1,6 +1,11 @@
 @use "../../config/config.scss";
 @use "../../config/util.scss";
 
+@media screen and (max-width: config.get-screen-size("l")) {
+    * {
+        box-sizing: border-box;
+    }
+}
 main {
     h2 {
         text-align: center;
@@ -10,24 +15,34 @@ main {
         @include util.width-per-screen-size(true, true);
         padding: 1rem;
         border-radius: 1rem;
-        div {
+        .sub-cont {
             display: flex;
-            flex-direction: row;
             justify-content: space-between;
             &:nth-of-type(even) {
                 flex-direction: row-reverse;
+                @media screen and (max-width: config.get-screen-size("l")) {
+                    flex-direction: column;
+                }
                 .text {
                     text-align: right;
+                    @media screen and (min-width: config.get-screen-size("m")) {
+                        text-align: left;
+                    }
                     a {
                         align-self: flex-end;
                     }
                 }
             }
+            @media screen and (max-width: config.get-screen-size("l")) {
+                flex-direction: column;
+            }
             .img {
                 .img1 {
-                    margin-left: -15rem;
-                    margin-top: -3rem;
-                    width: 55rem;
+                    @media screen and (min-width: config.get-screen-size("l")) {
+                        margin-left: -15rem;
+                        margin-top: -3rem;
+                        width: 55rem;
+                    }
                 }
                 // max-height: 20rem;
                 max-width: 40%;
@@ -39,17 +54,28 @@ main {
             }
             .text {
                 width: 70%;
+                @media screen and (max-width: config.get-screen-size("l")) {
+                    width: 100%;
+                }
                 flex-direction: column;
+                @media screen and (min-width: config.get-screen-size("l")) {
+                    display: flex;
+                }
+
                 justify-content: flex-start;
                 margin-bottom: 5rem;
                 a {
                     background-color: config.get-color("kenmerken-secondary");
-                    margin-left: -6.1rem;
+                    @media screen and (min-width: config.get-screen-size("l")) {
+                        margin-left: -6.1rem;
+                    }
                     width: fit-content;
-                    padding: .5rem 1rem;
+                    padding: 0.5rem 1rem;
                     border-radius: 1rem;
                     text-decoration: none;
-                    color: util.should-text-be-dark(config.get-color("kenmerken-secondary"));
+                    color: util.should-text-be-dark(
+                        config.get-color("kenmerken-secondary")
+                    );
                     transition: all 150ms ease-out;
                     &:hover {
                         background-color: #fbebdb;
@@ -57,7 +83,9 @@ main {
                 }
                 #text1 {
                     width: 90%;
-                    margin-left: -6rem;
+                    @media screen and (min-width: config.get-screen-size("l")) {
+                        margin-left: -6rem;
+                    }
                 }
             }
         }
@@ -65,7 +93,7 @@ main {
             font-size: 1.7rem;
         }
         hr {
-            color: #ABABAB;
+            color: #ababab;
         }
     }
     .img1 {
