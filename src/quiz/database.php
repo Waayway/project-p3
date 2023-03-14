@@ -22,22 +22,22 @@ class Quiz {
         }
     }
 
-    public function get_questions(){
-        $sql = "SELECT * FROM `vraagen` where is_enabled = '1' ";
+    public function get_questions() {
+        $sql = "SELECT * FROM `vraagen` WHERE is_enabled = '1' ";
         $statement = $this->db->prepare($sql);
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function get_all_options(){
-        $sql = "SELECT * FROM `quiz_options` where is_enabled = '1' ";
+        $sql = "SELECT * FROM `quiz_options` WHERE is_enabled = '1' ";
         $statement = $this->db->prepare($sql);
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function quiz_options($qid) {
-        $sql = "SELECT * FROM `quiz_options` where qid = :id AND is_enabled = '1'";
+        $sql = "SELECT * FROM `quiz_options` WHERE qid = :id AND is_enabled = '1'";
         $statement = $this->db->prepare($sql);
 
         $statement->bindValue(":id", $qid);
@@ -48,7 +48,7 @@ class Quiz {
     } 
 
     public function answer($qid) {
-        $sql = "SELECT * FROM `quiz_answer` where qid = :id ";
+        $sql = "SELECT * FROM `quiz_answer` WHERE qid = :id ";
         $statement = $this->db->prepare($sql);
 
         $statement->bindValue(":id", $qid);
@@ -57,4 +57,10 @@ class Quiz {
 
         return $statement->fetch(PDO::FETCH_OBJ);
     } 
+    public function get_all_answers() {
+        $sql = "SELECT * FROM `quiz_answer`";
+        $statement = $this->db->prepare($sql);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
 }

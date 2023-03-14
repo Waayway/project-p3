@@ -36,6 +36,15 @@
         require "../database.php";
         $positive = false;
         $db = new Quiz();
+        $allanswers = $db->get_all_answers();
+        $total = 0;
+        foreach ($allanswers as $value) {
+            if ($value->weight == null) {
+                $total++;
+            } else {
+                $total += $value->weight;
+            }
+        }
         $score = 0;
         $answers = [
             "Ja" => 1,
@@ -44,9 +53,14 @@
         foreach ($_POST as $key => $value) {
             $answer = $db->answer($key);
             if ($answer->option_number == $answers[$value]) {
-                $score++;
+                if ($answer->weight == null) $score++;
+                else $score += $answer->weight;
             }
         }
+        $positive = $score / $total > 0.5;
+
+        $positiveText = "Positive Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aliquam repudiandae incidunt est, commodi quam! Debitis culpa iste deserunt, tenetur ex, quisquam id dolor omnis minima eos minus nulla voluptate placeat veniam totam? Natus, placeat laboriosam optio saepe quis totam? Quasi quibusdam quas odio! Facere animi libero soluta non rem aperiam autem, sequi sed, ducimus deleniti odio at hic pariatur cumque sint ab nobis deserunt veniam et debitis error perferendis. Nostrum, consequuntur cumque quis iusto praesentium non reiciendis earum harum aspernatur, corporis dolorem dignissimos ex repellat nam! Beatae excepturi repellendus iste eius, repudiandae, eaque ducimus, reprehenderit debitis quisquam laborum fugiat!";
+        $negativeText = "Negative Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aliquam repudiandae incidunt est, commodi quam! Debitis culpa iste deserunt, tenetur ex, quisquam id dolor omnis minima eos minus nulla voluptate placeat veniam totam? Natus, placeat laboriosam optio saepe quis totam? Quasi quibusdam quas odio! Facere animi libero soluta non rem aperiam autem, sequi sed, ducimus deleniti odio at hic pariatur cumque sint ab nobis deserunt veniam et debitis error perferendis. Nostrum, consequuntur cumque quis iusto praesentium non reiciendis earum harum aspernatur, corporis dolorem dignissimos ex repellat nam! Beatae excepturi repellendus iste eius, repudiandae, eaque ducimus, reprehenderit debitis quisquam laborum fugiat!";
         ?>
         <div class="card">
             <div class="img">
@@ -56,14 +70,22 @@
                 UITSLAG
             </div>
             <div class="content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aliquam repudiandae incidunt est, commodi quam! Debitis culpa iste deserunt, tenetur ex, quisquam id dolor omnis minima eos minus nulla voluptate placeat veniam totam? Natus, placeat laboriosam optio saepe quis totam? Quasi quibusdam quas odio! Facere animi libero soluta non rem aperiam autem, sequi sed, ducimus deleniti odio at hic pariatur cumque sint ab nobis deserunt veniam et debitis error perferendis. Nostrum, consequuntur cumque quis iusto praesentium non reiciendis earum harum aspernatur, corporis dolorem dignissimos ex repellat nam! Beatae excepturi repellendus iste eius, repudiandae, eaque ducimus, reprehenderit debitis quisquam laborum fugiat!
+                <?= $positive ? $positiveText : $negativeText ?>
             </div>
-            <div class="again button">
+            <div class="email">
+                <h2>Wilt u de score per email ontvangen?</h2>
+                <form action="email.php" method="post">
+                    <input type="hidden" name="score" value="<?= $positive ? "positive" : "negative" ?>">
+                    <input type="email" name="email" placeholder="Email">
+                    <button type="submit">Versturen</button>
+                </form>
+            </div>
+            <a class="again button" href="../vragen/index.php">
                 Opnieuw <img src="../../../img/quiz/uitslagen/again.png" alt="">
-            </div>
-            <div class="home button">
+            </a>
+            <a class="home button" href="../../index.html">
                 Naar Home <img src="../../../img/quiz/uitslagen/backtohome.png" alt="">
-            </div>
+            </a>
         </div>
     </main>
     <footer>
