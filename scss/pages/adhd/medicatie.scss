@@ -8,7 +8,7 @@ main {
     .content {
         display: flex;
         justify-content: center;
-        background-color: config.get-color('container-bg');
+        background-color: config.get-color("container-bg");
         @include util.width-per-screen-size(true, true);
         display: grid;
         position: relative;
@@ -22,7 +22,25 @@ main {
             display: flex;
             justify-content: space-around;
             z-index: 2;
+            position: relative;
             .medicatie {
+                $amountOfBottles: 3;
+                transition: all 300ms ease-out;
+                &:not(:nth-of-type(1)) {
+                    position: absolute;
+                    transform: translate(-50%, 0);
+                    &.selected {
+                        left: 50%;
+                    }
+                }
+                &:nth-of-type(1) {
+                    position: relative;
+                }
+                @for $i from 2 through $amountOfBottles {
+                    &:nth-of-type(#{$i}) {
+                        left: 33% * ($i - 1);
+                    }
+                }
                 .img {
                     position: relative;
                     width: fit-content;
@@ -33,12 +51,19 @@ main {
                         right: 0;
                         top: 50%;
                         text-align: center;
-                        color: config.get-color('primary');
+                        color: config.get-color("primary");
                         font-weight: bold;
                     }
                 }
                 .text-container {
-                    display: none;
+                    top: 50%;
+                    left: 100%;
+                    width: 30rem;
+                    position: absolute;
+                    visibility: hidden;
+                    transition: all 300ms ease-out;
+                    transform-origin: left center;
+                    transform: scaleX(0) translate(0, -50%);
                 }
                 &.hidden {
                     opacity: 0;
@@ -47,12 +72,11 @@ main {
                 &.selected {
                     display: flex;
                     align-items: center;
-                    order: 2;
                     .text-container {
+                        visibility: visible;
                         margin-left: -5px;
-                        display: block;
-                        background-color: config.get-color('medicatie-popup');
-                        position: relative;
+                        transform: scaleX(1) translate(0, -50%);
+                        background-color: config.get-color("medicatie-popup");
                         padding: 1rem;
                         border-top-right-radius: 1rem;
                         border-bottom-right-radius: 1rem;
@@ -72,6 +96,29 @@ main {
             bottom: 0;
             right: 0;
             z-index: 1;
+        }
+    }
+}
+
+
+@media screen and (max-width: config.get-screen-size("l")) {
+    main {
+        .content {
+            .img-container {
+                flex-direction: column;
+                .medicatie {
+                    position: relative !important;
+                    left: 0 !important;
+                    transform: none !important;
+                    .text-container {
+                        width: 100%;
+                        height: 30rem;
+                        left: 0;
+                        top: 100%;
+                        transform: none;
+                    }
+                }
+            }
         }
     }
 }
