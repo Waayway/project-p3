@@ -70,6 +70,7 @@
                 UITSLAG
             </div>
             <div class="content">
+                <p>U had een score van <?= $score ?> van de <?= $total ?></p>
                 <?= $positive ? $positiveText : $negativeText ?>
             </div>
             <div class="email">
