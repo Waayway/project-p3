@@ -27,7 +27,7 @@
             <li><a href="../../add/add.html">Verschillen ADD</a></li>
           </ul>
         </li>
-        <li><a href="../quiz/vragen/index.html">Quiz</a></li>
+        <li><a href="../quiz/vragen/index.php">Quiz</a></li>
       </ul>
     </nav>
   </header>
