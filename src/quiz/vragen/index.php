@@ -45,6 +45,7 @@
           laudantium est distinctio culpa quis, nulla possimus animi
           laboriosam! Eius voluptatem possimus dolor autem tempore obcaecati
         </div>
+        <div class="error hidden"></div>
         <form action="../uitslagen/" method="post" class="questions">
           <?php
           require "../database.php";

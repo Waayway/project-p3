@@ -3,6 +3,8 @@ const questions = document.querySelectorAll(".questions .question");
 const prevButton = document.querySelector(".control .prev");
 const nextButton = document.querySelector(".control .next");
 
+const errorBox = document.querySelector(".error");
+
 let currentQuestion = 0;
 let currentActiveQuestion = 0;
 
@@ -65,4 +67,37 @@ answerBtn.forEach((el) => {
         console.log(input.checked);
         input.checked = !input.checked;
     });
+});
+
+document.querySelector("form").addEventListener("submit", (ev) => {
+    
+    let inputs = document.querySelectorAll("form input[type='radio']");
+    let pairs = [];
+    inputs.forEach((el) => {
+        if (typeof pairs[parseInt(el.name) - 1] != "object") {
+            pairs[parseInt(el.name) - 1] = [el];
+        } else {
+            pairs[parseInt(el.name) - 1].push(el);
+        }
+    });
+    let correct = true;
+    for (let i = 0; i < pairs.length; i++) {
+        let pair = pairs[i];
+        let validPair = false;
+        for (let j = 0; j < pair.length; j++) {
+            if (pair[j].checked) {
+                validPair = true;
+                break;
+            }
+        }
+        if (!validPair) {
+            correct = false;
+            break;
+        }
+    }
+    if (!correct) {
+        ev.preventDefault();
+        document.querySelector(".error").innerText = "1 Of meer vragen zijn nog niet ingevuld...";
+        document.querySelector(".error").classList.remove("hidden");
+    }
 });

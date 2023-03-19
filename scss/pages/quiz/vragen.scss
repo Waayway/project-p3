@@ -24,6 +24,15 @@ main {
                 align-items: center;
                 gap: 1rem;
             }
+            .error {
+                background-color: config.get-color("quiz-filled");
+                padding: 1rem;
+                margin-top: 1rem;
+                border-radius: 1rem;
+                &.hidden {
+                    display: none;
+                }
+            }
             .questions {
                 background-color: #fff;
                 padding: 1rem;
